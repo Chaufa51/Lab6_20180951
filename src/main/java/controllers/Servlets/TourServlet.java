@@ -1,7 +1,7 @@
-package Servlets;
+package controllers.Servlets;
 
-import Beans.Tour;
-import Daos.TourDao;
+import models.Beans.Tour;
+import models.Daos.TourDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

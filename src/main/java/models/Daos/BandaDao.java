@@ -1,10 +1,11 @@
-package Daos;
+package models.Daos;
 
-import Beans.Banda;
+import models.Beans.Banda;
 
 import java.util.ArrayList;
 
 public class BandaDao {
+
     private static String user = "root";
     private static String pass = "root";
     private static String url = "jdbc:mysql...";

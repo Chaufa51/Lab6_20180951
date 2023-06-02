@@ -1,6 +1,6 @@
-package Daos;
+package models.Daos;
 
-import Beans.Tour;
+import models.Beans.Tour;
 
 import java.sql.*;
 import java.util.ArrayList;

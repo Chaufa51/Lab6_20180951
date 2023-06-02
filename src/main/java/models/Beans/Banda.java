@@ -1,4 +1,4 @@
-package Beans;
+package models.Beans;
 
 public class Banda {
     private String idBanda;

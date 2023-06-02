@@ -1,41 +1,42 @@
 package models.Daos;
 
+import models.Beans.Banda;
+import models.Beans.Canciones;
 import models.Beans.Reproduccion;
-import models.Beans.Tour;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-public class ReproduccionDao {
+public class RecomendadosDao {
 
     private static String user = "root";
     private static String pass = "root";
     private static String url = "jdbc:mysql://localhost:3306/lab6sw1?serverTimezone=America/Lima";
 
 
-    public ArrayList<Reproduccion> obtenerListaReproduccion(){
+    public ArrayList<Canciones> obtenerListaRecomendados(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        ArrayList<Reproduccion> listaReproduccion = new ArrayList<>();
+        ArrayList<Canciones> listaCanciones = new ArrayList<>();
         try (Connection conn = DriverManager.getConnection(url, user, pass);
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery("")) {
 
             while (rs.next()) {
                 int id = rs.getInt(1);
-                String fecha = rs.getString(2);
-                Integer cancionId = rs.getInt(3);
+                String nombre = rs.getString(2);
+                String banda = rs.getString(3);
 
-                listaReproduccion.add(new Reproduccion(id,fecha,cancionId));
+                listaCanciones.add(new Canciones(id,nombre,banda));
             }
 
         } catch (SQLException e) {
             System.out.println("No se pudo realizar la busqueda");
         }
-        return listaReproduccion;
+        return listaCanciones;
     }
 
 
