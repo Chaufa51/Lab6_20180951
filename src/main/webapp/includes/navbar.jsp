@@ -12,6 +12,11 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link <%=request.getParameter("page").equals("favoritos")? "active": "" %>" href="<%=request.getContextPath()%>/listaFavoritos">Favoritos</a>
+            </li>
+
             <li class="nav-item">
                 <a class="nav-link <%=request.getParameter("page").equals("tours")? "active": "" %>" href="<%=request.getContextPath()%>/listaTours">Tours</a>
             </li>
@@ -30,9 +35,8 @@
 
             <%-- Agrege esta linea para Recomendados--%>
             <li class="nav-item">
-                <a class="nav-link <%=request.getParameter("page").equals("Recomendados")? "active": "" %>" href="<%=request.getContextPath()%>/listaRecomendados">Recomendados</a>
+                <a class="nav-link <%=request.getParameter("page").equals("recomendaciones")? "active": "" %>" href="<%=request.getContextPath()%>/listaRecomendaciones">Recomendaciones</a>
             </li>
-
         </ul>
     </div>
 </nav>

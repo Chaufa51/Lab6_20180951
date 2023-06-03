@@ -23,7 +23,19 @@ public class RecomendadosDao {
         ArrayList<Canciones> listaCanciones = new ArrayList<>();
         try (Connection conn = DriverManager.getConnection(url, user, pass);
              Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("")) {
+             ResultSet rs = stmt.executeQuery("SELECT *\n" +
+                     "FROM cancion\n" +
+                     "WHERE idcancion IN (\n" +
+                     "    SELECT cancion_idcancion\n" +
+                     "    FROM reproduccion\n" +
+                     "    GROUP BY cancion_idcancion\n" +
+                     "    HAVING COUNT(*) > 2\n" +
+                     ")\n" +
+                     "ORDER BY (\n" +
+                     "    SELECT COUNT(cancion_idcancion)\n" +
+                     "    FROM reproduccion\n" +
+                     "    WHERE cancion_idcancion = cancion.idcancion\n" +
+                     ") DESC;")) {
 
             while (rs.next()) {
                 int id = rs.getInt(1);
