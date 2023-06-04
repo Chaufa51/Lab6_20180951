@@ -35,7 +35,7 @@
                         </td>
 
                         <td>
-                            <form action="<%=request.getContextPath()%>/listaFavoritos" method="post">
+                            <form action="<%=request.getContextPath()%>//listaFavoritos" method="post">
                                 <input type="hidden" name="id" value="<%=canciones.getIdCancion()%>">
                                 <input type="hidden" name="id" value="<%=canciones.getFavorito()%>">
                                 <button type="button" class="btn btn-outline-success rounded-circle" data-toggle="button" aria-pressed="true" autocomplete="off"></button>

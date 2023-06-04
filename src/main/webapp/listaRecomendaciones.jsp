@@ -36,7 +36,12 @@
                         </td>
                         <td> <a class="btn btn-success" href="http://localhost:8080/LAB6_SW1_BASE_war_exploded//listaCancionesPorBanda?banda=<%=canciones.getIdBanda()%>">Mas de la Banda</a>
                         </td>
-                        <td><button type="button" class="btn btn-outline-success rounded-circle" data-toggle="button" aria-pressed="true" autocomplete="off"></button>
+                        <td>
+                            <form action="<%=request.getContextPath()%>//listaFavoritos" method="post">
+                                <input type="hidden" name="id" value="<%=canciones.getIdCancion()%>">
+                                <input type="hidden" name="id" value="<%=canciones.getFavorito()%>">
+                                <button type="button" class="btn btn-outline-success rounded-circle" data-toggle="button" aria-pressed="true" autocomplete="off"></button>
+                            </form>
                         </td>
 
                     </tr>
