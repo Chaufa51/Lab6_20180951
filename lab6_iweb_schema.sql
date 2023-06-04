@@ -84,6 +84,7 @@ CREATE TABLE `cancion` (
   `idcancion` int NOT NULL AUTO_INCREMENT,
   `nombre_cancion` varchar(40) NOT NULL,
   `banda` varchar(3) NOT NULL,
+  `favorito` tinyint NOT NULL DEFAULT 0,
   PRIMARY KEY (`idcancion`),
   KEY `fk_cancion_banda1_idx` (`banda`),
   CONSTRAINT `fk_cancion_banda1` FOREIGN KEY (`banda`) REFERENCES `banda` (`idbanda`)

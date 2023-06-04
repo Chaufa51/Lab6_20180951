@@ -4,6 +4,7 @@ public class Canciones {
     private int idCancion;
     private String nombreCancion;
     private String idBanda;
+    private int favorito;
 
     public Canciones(int idCancion, String nombreCancion, String idBanda) {
         this.idCancion = idCancion;
@@ -33,5 +34,13 @@ public class Canciones {
 
     public void setIdBanda(String idBanda) {
         this.idBanda = idBanda;
+    }
+
+    public int getFavorito() {
+        return favorito;
+    }
+
+    public void setFavorito(int favorito) {
+        this.favorito = favorito;
     }
 }
