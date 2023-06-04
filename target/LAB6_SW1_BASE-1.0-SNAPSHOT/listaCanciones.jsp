@@ -33,7 +33,7 @@
                         </td>
                         <td><%=canciones.getIdBanda()%>
                         </td>
-                        <td><button type="button" class="btn btn-outline-danger rounded-circle"></button>
+                        <td><button type="button" class="btn btn-outline-success rounded-circle" data-toggle="button" aria-pressed="true" autocomplete="off"></button>
                         </td>
 
 

@@ -96,11 +96,11 @@ public class CancionesDao {
             Class.forName("com.mysql.cj.jdbc.Driver");
             ArrayList<Canciones> listaCanciones = new ArrayList<>();
             try (Connection conn = DriverManager.getConnection(url, user, pass);){
-                String sql = "UPDATE cancion SET favorito = favorito WHERE idcancion = idcancion;";
+                String sql = "UPDATE cancion SET favorito = ? WHERE idcancion = ?;";
 
                 try(PreparedStatement pstmt = conn.prepareStatement(sql)){
-                    pstmt.setInt(1, idcancion);
-                    pstmt.setInt(4,favorito);
+                    pstmt.setInt(1, favorito);
+                    pstmt.setInt(2,idcancion);
                     pstmt.executeUpdate();
                 }
             }
