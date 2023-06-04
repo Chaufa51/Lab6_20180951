@@ -90,4 +90,23 @@ public class CancionesDao {
         }
         return listaCanciones;
     }
+
+    public void actualizarFavorito(int idcancion , int favorito){
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            ArrayList<Canciones> listaCanciones = new ArrayList<>();
+            try (Connection conn = DriverManager.getConnection(url, user, pass);){
+                String sql = "UPDATE cancion SET favorito = favorito WHERE idcancion = idcancion;";
+
+                try(PreparedStatement pstmt = conn.prepareStatement(sql)){
+                    pstmt.setInt(1, idcancion);
+                    pstmt.setInt(4,favorito);
+                    pstmt.executeUpdate();
+                }
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

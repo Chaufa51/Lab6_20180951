@@ -31,14 +31,14 @@
                     <%
                         for (Canciones canciones : listaCanciones) {
                     %>
-                    <tr>
-                        <td><%=canciones.getIdCancion()%>
+                    <tr method="POST" action="<%=request.getContextPath()%>/listaFavoritos">
+                        <td id="idcancion"><%=canciones.getIdCancion()%>
                         </td>
                         <td><%=canciones.getNombreCancion()%>
                         </td>
                         <td><%=canciones.getIdBanda()%>
                         </td>
-                        <td><button type="button" class="btn btn-outline-danger rounded-circle"></button>
+                        <td><button type="button" class="btn btn-outline-danger rounded-circle" id ="favorito"></button>
                         </td>
 
                     </tr>
