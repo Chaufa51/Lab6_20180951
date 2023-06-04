@@ -21,8 +21,6 @@ public class CancionesFavoritosServlet extends HttpServlet {
         CancionesDao cancionesDao = new CancionesDao();
         cancionesDao.actualizarFavorito(idcancion,favorito);
         response.sendRedirect(request.getContextPath()+ "/listaFavoritos");
-
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

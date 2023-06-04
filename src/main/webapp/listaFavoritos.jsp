@@ -32,8 +32,12 @@
                         <td><%=canciones.getNombreCancion()%>
                         </td>
                         <td><%=canciones.getIdBanda()%>
-                        </td>
-                        <td><button type="button" class="btn btn-outline-success rounded-circle active" data-toggle="button" aria-pressed="true" autocomplete="off"></button>
+                        <td>
+                            <form action="<%=request.getContextPath()%>/listaFavoritos" method="post">
+                                <input type="hidden" name="idcancion" value="<%=canciones.getIdCancion()%>">
+                                <input type="hidden" name="favorito" value="<%=canciones.getFavorito()%>">
+                                <button type="button" class="btn btn-outline-success rounded-circle active" data-toggle="button" aria-pressed="true" autocomplete="off"></button>
+                            </form>
                         </td>
 
 
